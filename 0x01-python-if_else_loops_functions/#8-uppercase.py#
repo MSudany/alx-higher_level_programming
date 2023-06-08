@@ -1,6 +1,0 @@
-#!/usr/bin/python3
-def uppercase(str):
-    for i in range(len(str)):
-        if c >= ord('a') and c <= ord('z'):
-            print()
-    return false
