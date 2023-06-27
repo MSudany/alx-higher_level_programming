@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    new_list = []
     n = 0
-    new = 0
-    while n != list_length:
+    new_list = []
+    while n < list_length:
+        new = 0
         try:
             new = my_list_1[n] / my_list_2[n]
         except ZeroDivisionError:
