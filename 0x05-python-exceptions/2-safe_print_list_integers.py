@@ -5,7 +5,7 @@ def safe_print_list_integers(my_list=[], x=0):
     try:
         while count != x:
             try:
-                print('{:d}'.format(my_list[n]))
+                print('{:d}'.format(my_list[count]))
                 count += 1
                 real += 1
             except:
@@ -15,3 +15,4 @@ def safe_print_list_integers(my_list=[], x=0):
         None
     print()
     return real
+
