@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 '''python oop'''
+
+
 class Square():
     '''class of a square'''
     def __init__(self, size=0):
