@@ -38,19 +38,19 @@ class Square():
             or value[0] < 0
             or value[1] < 0):
             raise TypeError('position must be a tuple of 2 positive integers')
-        else:
-            self.__position = value
+        self.__position = value
 
     def area(self):
         '''evaluates the area'''
-        return self.__size ** 2
+        return self.size ** 2
 
     def my_print(self):
         '''prints the square'''
-        if self.__size == 0:
+        if self.size == 0:
             print()
-        for i in range(0, self.__position[1]):
-            print()
-            for j in range(0, self.__size):
-                print(' ' * self.__position)
-                print('#' * self.__size)
+        else:
+            for i in range(0, self.position[1]):
+                print()
+                for j in range(0, self.size):
+                    print(' ' * self.position, end='')
+                    print('#' * self.size)
