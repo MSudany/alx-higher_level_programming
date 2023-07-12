@@ -12,5 +12,5 @@ class Student:
 
     def to_json(self, attrs=None):
         if attrs is not None
-            
+            return self.vars(attrs)
         return self.__dict__
