@@ -21,6 +21,6 @@ class Student:
         Args:
             attrs (list): (Optional) The attributes to represent.
         '''
-        if attrs is not None
+        if attrs is not None:
             return self.vars(attrs)
         return self.__dict__
