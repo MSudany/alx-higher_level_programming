@@ -16,6 +16,14 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    def __str__(self):
+        '''overriding __str__ method'''
+        return '[{}] ({}) {:d}/{:d} - {:d}/{:d}'.format(self.__class__.__name__
+                                                        , self.id,
+                                                        self.x, self.y,
+                                                        self.width, self.height
+                                                        )
+
     @property
     def width(self):
         return self.__width
