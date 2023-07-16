@@ -18,8 +18,8 @@ class Rectangle(Base):
 
     def __str__(self):
         '''overriding __str__ method'''
-        return '[{}] ({}) {:d}/{:d} - {:d}/{:d}'.format(self.__class__.__name__
-                                                        , self.id,
+        return '[{}] ({}) {:d}/{:d} - {:d}/{:d}'.format(self.__class__.__name__,
+                                                        self.id,
                                                         self.x, self.y,
                                                         self.width, self.height
                                                         )
@@ -78,7 +78,11 @@ class Rectangle(Base):
 
     def display(self):
         '''displays rectangle instance'''
+        for y in range(self.y):
+            print()
         for i in range(self.height):
+            for x in range(self.x):
+                print(' ', end='')
             for j in range(self.width):
                 print('#', end='')
             print()
