@@ -2,7 +2,6 @@
 '''py oop'''
 
 
-import sys
 from models.rectangle import Rectangle
 
 
@@ -62,3 +61,7 @@ class Square(Rectangle):
                 self.y = kwargs['y']
             except KeyError:
                 pass
+
+    def to_dictionary(self):
+        '''dictionary representation of an instance'''
+        return {'id': self.id, 'size': self.width, 'x': self.x, 'y': self.y}
