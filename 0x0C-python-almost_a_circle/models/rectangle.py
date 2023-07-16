@@ -2,7 +2,6 @@
 '''py oop'''
 
 
-import sys
 from models.base import Base
 
 
@@ -122,3 +121,8 @@ class Rectangle(Base):
                 self.y = kwargs['y']
             except KeyError:
                 pass
+
+    def to_dictionary(self):
+        '''dictionary representation of an instance'''
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height,
+                'width': self.width}
