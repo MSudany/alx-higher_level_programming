@@ -19,11 +19,12 @@ class Rectangle(Base):
 
     def __str__(self):
         '''overriding __str__ method'''
-        return '[{}] ({}) {:d}/{:d} - {:d}/{:d}'.format(self.__class__.__name__,
-                                                        self.id,
-                                                        self.x, self.y,
-                                                        self.width, self.height
-                                                        )
+        return '[{}] ({}) {:d}/{:d} - {:d}/{:d}\
+                '.format(self.__class__.__name__,
+                         self.id,
+                         self.x, self.y,
+                         self.width, self.height
+                         )
 
     @property
     def width(self):
@@ -88,7 +89,7 @@ class Rectangle(Base):
                 print('#', end='')
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         '''assigns an argument to each attribute of a specific instance'''
         if args is not None:
             try:
@@ -98,4 +99,26 @@ class Rectangle(Base):
                 self.x = args[3]
                 self.y = args[4]
             except IndexError:
+                pass
+
+        if not args and kwargs is not None:
+            try:
+                self.id = kwargs['id']
+            except KeyError:
+                pass
+            try:
+                self.width = kwargs['width']
+            except KeyError:
+                pass
+            try:
+                self.height = kwargs['height']
+            except KeyError:
+                pass
+            try:
+                self.x = kwargs['x']
+            except KeyError:
+                pass
+            try:
+                self.y = kwargs['y']
+            except KeyError:
                 pass
