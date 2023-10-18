@@ -1,5 +1,5 @@
 -- creates a tabele in the current database?
-CREATE TABLE first_table IF NOT EXISTS{
-    id INT
+CREATE TABLE IF NOT EXISTS first_table (
+    id INT NOT NULL,
     name VARCHAR(256)
-};
+);
