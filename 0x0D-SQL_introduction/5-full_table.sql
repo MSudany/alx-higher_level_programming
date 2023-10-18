@@ -1,3 +1,3 @@
 -- prints the full description of a table
-SELECT *
+DESC SELECT *
 FROM first_table
