@@ -1,6 +1,6 @@
 -- ...
 CREATE TABLE 
     IF NOT EXISTS unique_id (
-        id INT UNIQUE DEFAULT 1,
-        NAME VARCHAR(255)
+        id INT DEFAULT 1 UNIQUE,
+        NAME VARCHAR(256)
     );
