@@ -1,5 +1,5 @@
 -- ...
-SELECT id AS cities.id, name AS cities.name, states.name AS states.name
+SELECT cities.id, cities.name, states.name
 FROM cities
 JOIN states
 ON cities.id = states.id
