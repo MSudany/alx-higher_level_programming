@@ -1,18 +1,15 @@
 #!/usr/bin/python3
 """..."""
-from sys import argv
 import requests
+from sys import argv
 
-
-if __name__ == '__main__':
-    try:
-        repo = argv[1]
-        owner = argv[2]
-        url = 'https://api.github.com/repos/{}/{}/commits'.format(owner, repo)
-        response = requests.get(url)
-        commits = response.json()
-        for i in range(0, 10):
-            print('{}: {}'.format(commits[i]['sha'],
-                                  commits[i]['commit']['author']['name']))
-    except Exception:
-        pass
+if __name__ == "__main__":
+    url = "https://api.github.com/repos/{}/{}/commits"\
+          .format(argv[2], argv[1])
+    r = requests.get(url)
+    n = 0
+    for i in r.json():
+        if n < 10:
+            print("{}: {}".format(i.get("sha"),
+                  i.get("commit").get("author").get("name")))
+        n += 1
