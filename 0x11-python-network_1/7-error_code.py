@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """..."""
-from sys import argv
 import requests
+from sys import argv
 
 
 if __name__ == '__main__':
-    response = requests.get(argv[1])
-    status_code = response.status_code
-    if status_code > 400:
-        print('Error code: {}'.format(status_code))
+    r = requests.get(argv[1])
+    if r.status_code >= 400:
+        print('Error code:', r.status_code)
     else:
-        print('{}'.format(response.text))
+        print(r.text)

@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """..."""
+from urllib.request import Request, urlopen
+from urllib.error import HTTPError
 from sys import argv
-from urllib import request, parse, error
-
 
 if __name__ == '__main__':
+    req = Request(argv[1])
     try:
-        with request.urlopen(argv[1]) as response:
-            print(response.read().decode('utf-8'))
-    except error.HTTPError as e:
-        print('Error code: {}'.format(e.code))
+        with urlopen(req) as response:
+            r = response.read()
+            print(r.decode('utf-8'))
+    except HTTPError as e:
+        print('Error code:', e.code)
